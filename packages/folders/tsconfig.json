@@ -7,9 +7,10 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "jsx": "react",
-    "outDir": "build",
+    "outDir": "lib",
     "lib": ["dom", "es2015"],
     "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/*.test.tsx"]
 }
