@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "jsx": "react",
+    "outDir": "build",
+    "lib": ["dom", "es2015"],
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
