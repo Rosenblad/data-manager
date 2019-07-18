@@ -5,7 +5,8 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "pack:watch": "ts-node ./scripts/watcher.ts",
+    "clean": "rm -rf lib ./*.tgz",
+    "dev:watch": "dm-watcher src clean",
     "build": "rm -rf ./lib && tsc --declaration",
     "test": "jest",
     "test:watch": "jest --watchAll"
@@ -19,6 +20,7 @@
     "react": "16.8.6"
   },
   "devDependencies": {
+    "@data-manager/devutils": "file:../devutils/data-manager-devutils-1.0.0.tgz",
     "@material-ui/core": "4.2.0",
     "@material-ui/icons": "4.2.1",
     "@testing-library/react": "8.0.4",
