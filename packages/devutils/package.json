@@ -1,0 +1,27 @@
+{
+  "name": "@data-manager/devutils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/watcher.js",
+  "bin": {
+    "dm-watcher": "./lib/watcher.js"
+  },
+  "scripts": {
+    "clean": "rm -rf lib ./*.tgz",
+    "compile": "npm run clean && tsc --declaration",
+    "pack": "npm run compile && npm pack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npm run compile && npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "12.6.8",
+    "ts-node": "8.3.0",
+    "typescript": "3.5.3"
+  },
+  "dependencies": {
+    "chalk": "2.4.2"
+  }
+}
