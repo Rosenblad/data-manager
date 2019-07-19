@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@data-manager/*": ["./packages/*"]
+    },
+    "moduleResolution": "node",
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "lib",
+    "strict": true
+  },
+  "include": ["examples"],
+  "exclude": ["node_modules", "**/*.test.tsx", "test/"]
+}
