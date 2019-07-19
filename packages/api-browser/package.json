@@ -1,0 +1,28 @@
+{
+  "name": "@data-manager/api-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "clean": "rm -rf lib ./*.tgz",
+    "compile": "npm run clean && tsc --declaration",
+    "pack": "npm run compile && npm pack",
+    "watch": "dm-watcher src clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@material-ui/core": "4.2.1",
+    "@material-ui/icons": "4.2.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "devDependencies": {
+    "@data-manager/devutils": "file:../devutils/data-manager-devutils-1.0.0.tgz",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
+    "typescript": "3.5.3"
+  }
+}

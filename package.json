@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Rosenblad/data-manager#readme",
   "dependencies": {
     "@material-ui/core": "4.2.1",
+    "@material-ui/icons": "4.2.1",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
