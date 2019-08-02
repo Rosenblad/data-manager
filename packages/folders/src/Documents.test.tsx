@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import FolderItems from './FolderItems';
+import Documents from './Documents';
 
 const mockItems = [
   {
@@ -14,9 +14,9 @@ const mockItems = [
   },
 ];
 
-describe('FolderItems', () => {
+describe('Documents', () => {
   it('renders folder items', () => {
-    const { getByText } = render(<FolderItems items={mockItems} />);
+    const { getByText } = render(<Documents items={mockItems} />);
     expect(getByText(mockItems[0].title)).toBeDefined();
     expect(getByText(mockItems[1].title)).toBeDefined();
   });

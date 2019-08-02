@@ -1,6 +1,12 @@
-import React from 'react';
-import FolderItems, { IFolderItemsProps } from './FolderItems';
+import React from "react";
+import Documents, { IDocumentsProps } from "./Documents";
+import { CssBaseline } from "@material-ui/core";
 
-export default function Folders({ items }: IFolderItemsProps) {
-  return <FolderItems items={items} />;
+export default function Folders({ onDelete, items }: IDocumentsProps) {
+  return (
+    <>
+      <CssBaseline />
+      <Documents onDelete={onDelete} items={items} />
+    </>
+  );
 }

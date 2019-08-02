@@ -10,7 +10,10 @@
     "allowJs": true,
     "jsx": "react",
     "outDir": "lib",
-    "strict": true
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["examples"],
   "exclude": ["node_modules", "**/*.test.tsx", "test/"]

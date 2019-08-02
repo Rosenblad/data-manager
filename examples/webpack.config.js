@@ -20,9 +20,11 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@data-manager/api-browser': path.resolve(process.cwd(), 'packages/api-browser/src'),
+      '@data-manager/folders': path.resolve(process.cwd(), 'packages/folders/src'),
     },
   },
   devServer: {
     contentBase: path.resolve(__dirname),
+    historyApiFallback: true,
   }
 }
