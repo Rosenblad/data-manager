@@ -2,14 +2,13 @@ import React from "react";
 
 import ParamsField from "./ParamsField";
 import RequestUrlField from './RequestUrlField';
-import { OnChange, ApiFormValues } from './types';
+import { OnChange, ApiBrowserValues } from './types';
 
 export interface IRenderFormProps {
-  values: ApiFormValues;
+  values: ApiBrowserValues;
   onSubmit: () => void;
   onChange: OnChange;
   onDelete: (name: string) => void;
-  onAdd: () => void;
 }
 
 export default function RenderForm({
@@ -23,7 +22,7 @@ export default function RenderForm({
       {Object.entries(values.params).map(([key, value]) => (
         <ParamsField
           key={key}
-          name={key}
+          name={`params[${key}]`}
           value={value}
           onChange={onChange}
           onClickDelete={onDelete}

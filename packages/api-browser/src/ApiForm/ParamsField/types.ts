@@ -5,4 +5,4 @@ export interface ParamsFieldValue {
 
 export type FieldNames = keyof ParamsFieldValue;
 
-export type ChangeSet = { key: keyof ParamsFieldValue; value: string };
+export type ChangeSet = { key: string; value: string };

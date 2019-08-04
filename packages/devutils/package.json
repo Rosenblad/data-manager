@@ -2,7 +2,7 @@
   "name": "@data-manager/devutils",
   "version": "1.0.0",
   "description": "",
-  "main": "./lib/watcher.js",
+  "main": "./src/index.ts",
   "bin": {
     "dm-watcher": "./lib/watcher.js"
   },
@@ -22,6 +22,9 @@
     "typescript": "3.5.3"
   },
   "dependencies": {
-    "chalk": "2.4.2"
+    "@testing-library/react": "8.0.7",
+    "chalk": "2.4.2",
+    "jest": "24.8.0",
+    "ts-jest": "24.0.2"
   }
 }

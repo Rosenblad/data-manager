@@ -1,6 +1,10 @@
 {
   "extends": "../config/tsconfig-react.json",
   "compilerOptions": {
-    "outDir": "lib"
+    "outDir": "lib",
+    "baseUrl": ".",
+    "paths": {
+      "@data-manager/*": ["../*"]
+    }
   }
 }

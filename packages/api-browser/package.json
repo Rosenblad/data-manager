@@ -8,7 +8,8 @@
     "compile": "npm run clean && tsc --declaration",
     "pack": "npm run compile && npm pack",
     "watch": "dm-watcher src clean",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +21,10 @@
     "react-dom": "16.8.6"
   },
   "devDependencies": {
-    "@data-manager/devutils": "file:../devutils/data-manager-devutils-1.0.0.tgz",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "jest": "24.8.0",
+    "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   }
 }

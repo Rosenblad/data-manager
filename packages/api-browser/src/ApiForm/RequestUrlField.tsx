@@ -1,9 +1,10 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
+import { OnChange } from './types';
 
 export interface RequestUrlFieldProps {
   value: string;
-  onChange: (name: string, changeSet: string) => void;
+  onChange: OnChange;
 }
 
 export default function RequestUrlField({
@@ -14,7 +15,7 @@ export default function RequestUrlField({
     (event: React.ChangeEvent<{ value: string }>) => {
       const { value } = event.target;
 
-      onChange("url", value);
+      onChange({ key: "url", value });
     },
     [onChange]
   );

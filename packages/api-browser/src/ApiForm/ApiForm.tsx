@@ -3,33 +3,34 @@ import React from 'react';
 import { ChangeSet } from './ParamsField';
 
 import reducer from './reducers';
-import { ActionTypes } from './types';
+import { ActionTypes, ApiBrowserValues } from './types';
 import RenderApiForm from './RenderApiForm';
 
 const initialState = {
   url: '',
-  params: {
-    1: {
+  params: [
+    {
       key: 'hello',
       value: 'hello',
     },
-  }
+  ],
 };
 
-export default function ApiForm() {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+export interface ApiFormProps {
+  onSubmit?: (nextValues: ApiBrowserValues) => void;
+}
 
-  const handleAdd = React.useCallback(() => {
-    dispatch({
-      type: ActionTypes.Add,
-      payload: { key: String(Math.random()) }
-    });
-  }, [dispatch]);
+export default function ApiForm({ onSubmit }: ApiFormProps) {
+  const [state, dispatch] = React.useReducer(reducer, initialState);
 
   const handleSubmit = React.useCallback(() => {
     dispatch({
       type: ActionTypes.Submit
     });
+
+    if (onSubmit) {
+      onSubmit(state);
+    }
   }, [dispatch]);
 
   const handleDelete = React.useCallback(
@@ -40,8 +41,8 @@ export default function ApiForm() {
   );
 
   const handleChange = React.useCallback(
-    (name: string, changeSet: ChangeSet | string) => {
-      dispatch({ type: ActionTypes.Change, payload: { key: name, changeSet } });
+    (changeSet: ChangeSet) => {
+      dispatch({ type: ActionTypes.Change, payload: { changeSet } });
     },
     [dispatch]
   );
@@ -52,7 +53,6 @@ export default function ApiForm() {
       onSubmit={handleSubmit}
       onDelete={handleDelete}
       onChange={handleChange}
-      onAdd={handleAdd}
     />
   );
 }

@@ -21,6 +21,7 @@ module.exports = {
     alias: {
       '@data-manager/api-browser': path.resolve(process.cwd(), 'packages/api-browser/src'),
       '@data-manager/folders': path.resolve(process.cwd(), 'packages/folders/src'),
+      '@data-manager/devutils': path.resolve(process.cwd(), 'packages/devutils/src'),
     },
   },
   devServer: {

@@ -4,7 +4,8 @@
   "description": "data manager workspace",
   "scripts": {
     "start": "webpack-dev-server --config examples/webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./packages --watchAll --config ./packages/devutils/src/test/jest.config.js",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,15 @@
     "@types/react-router-dom": "4.3.4",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-router-dom": "5.0.1"
+    "react-router-dom": "5.0.1",
+    "ts-jest": "24.0.2"
   },
   "devDependencies": {
+    "@testing-library/react": "8.0.7",
     "@types/jest": "24.0.15",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "jest": "24.8.0",
     "ts-loader": "6.0.4",
     "typescript": "3.5.3",
     "webpack": "4.36.1",

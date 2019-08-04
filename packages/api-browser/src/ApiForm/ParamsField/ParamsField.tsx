@@ -15,21 +15,21 @@ export interface ParamsFieldProps {
 }
 
 export default React.memo(function ParamsField({
-  name: key,
+  name,
   value,
   onChange,
   onClickDelete
 }: ParamsFieldProps) {
   const handleChange = React.useCallback(
-    (changeSet: ChangeSet) => {
-      onChange(key, changeSet);
+    ({ key, value }: ChangeSet) => {
+      onChange({ key: `${name}.${key}`, value });
     },
-    [key, onChange]
+    [name, onChange]
   );
 
   const handleDelete = React.useCallback(() => {
-    onClickDelete(key);
-  }, [onClickDelete, key]);
+    onClickDelete(name);
+  }, [onClickDelete, name]);
 
   return (
     <Grid container spacing={1}>

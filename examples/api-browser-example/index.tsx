@@ -1,8 +1,14 @@
-import React from 'react';
-import ApiBrowser from '@data-manager/api-browser';
+import React from "react";
+import ApiBrowser, { ApiBrowserValues } from "@data-manager/api-browser";
 
 export default function ApiBrowserExample() {
-  return (
-    <ApiBrowser />
-  );
+  const [values, setValues] = React.useState<ApiBrowserValues>();
+
+  console.log('values:', values);
+
+  const handleSubmit = React.useCallback((nextValues: ApiBrowserValues) => {
+    setValues(nextValues);
+  }, []);
+
+  return <ApiBrowser onSubmit={handleSubmit} />;
 }
